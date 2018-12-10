@@ -2,6 +2,7 @@
 
 **Simple command line [Blackjack](https://www.bicyclecards.com/how-to-play/blackjack/) game, written in C**
 
+[Technical Paper](https://github.com/Robinbux/Blackjack/wiki/Technical-Paper)
 
 **Installation instructions:**
 
