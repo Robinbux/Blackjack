@@ -15,13 +15,40 @@ void drawCard(int currentPlayer[], int drawnCards[]) {
     }
 }
 
+// Converts an abbreviation to a full expression. Example: H8 -> Eight of Hearts
+char *convertToExpr(char *abbreviation) {
+    char *fullExpr = malloc(sizeof(char) * 18); // Longest expression possible contains 17 chars
+    switch (abbreviation[1]) {
+        case '2': strcat(fullExpr, "Two of "); break;
+        case '3': strcat(fullExpr, "Three of "); break;
+        case '4': strcat(fullExpr, "Four of "); break;
+        case '5': strcat(fullExpr, "Five of "); break;
+        case '6': strcat(fullExpr, "Six of "); break;
+        case '7': strcat(fullExpr, "Seven of "); break;
+        case '8': strcat(fullExpr, "Eight of "); break;
+        case '9': strcat(fullExpr, "Nine of "); break;
+        case 'T': strcat(fullExpr, "Ten of "); break;
+        case 'J': strcat(fullExpr, "Jack of "); break;
+        case 'Q': strcat(fullExpr, "Queen of "); break;
+        case 'K': strcat(fullExpr, "King of "); break;
+        case 'A': strcat(fullExpr, "Ace of "); break;
+    }
+    switch (abbreviation[0]) {
+        case 'S': strcat(fullExpr, "Spades"); break;
+        case 'C': strcat(fullExpr, "Clubs"); break;
+        case 'H': strcat(fullExpr, "Hearts"); break;
+        case 'D': strcat(fullExpr, "Diamonds"); break;
+    }
+    return fullExpr;
+}
+
 void printHand(int currentPlayer[], char *player, char deckValues[][3]) {
     int ln = getHandLength(currentPlayer);
     int totalVal = 0;
     int currentVal;
     printf("%s Hand: ", player);
     for (int i = 0; i < ln; i++) {
-        printf("%s ", deckValues[currentPlayer[i] - 1]);
+        printf("%s; ", convertToExpr(deckValues[currentPlayer[i] - 1]));
     }
     putchar('\n');
 }
@@ -67,9 +94,9 @@ void drawStartHand(int playersHand[], int dealersHand[], int drawnCards[]) {
 }
 
 void newGameMessage(int dealersHand[], char deckValues[][3]) {
-    printf("Welcome to a new round of Blackjack!\n");
+    printf("Welcome to a new round of Blackjack!\n\n");
     printf("---Possible Actions---\n");
-    printf("Hit: new card, Stand: no new card\n");
+    printf("Hit: new card, Stand: no new card\n\n");
     printHand(dealersHand, "Dealers", deckValues);
     printf("Dealers Value: %i\n", getValue(dealersHand));
     printf("----------------------\n");
