@@ -17,21 +17,22 @@ void drawCard(int currentPlayer[], int drawnCards[]) {
 
 // Converts an abbreviation to a full expression. Example: H8 -> Eight of Hearts
 char *convertToExpr(char *abbreviation) {
+        //printf("LOL");
     char *fullExpr = malloc(sizeof(char) * 18); // Longest expression possible contains 17 chars
     switch (abbreviation[1]) {
-        case '2': strcat(fullExpr, "Two of "); break;
-        case '3': strcat(fullExpr, "Three of "); break;
-        case '4': strcat(fullExpr, "Four of "); break;
-        case '5': strcat(fullExpr, "Five of "); break;
-        case '6': strcat(fullExpr, "Six of "); break;
-        case '7': strcat(fullExpr, "Seven of "); break;
-        case '8': strcat(fullExpr, "Eight of "); break;
-        case '9': strcat(fullExpr, "Nine of "); break;
-        case 'T': strcat(fullExpr, "Ten of "); break;
-        case 'J': strcat(fullExpr, "Jack of "); break;
-        case 'Q': strcat(fullExpr, "Queen of "); break;
-        case 'K': strcat(fullExpr, "King of "); break;
-        case 'A': strcat(fullExpr, "Ace of "); break;
+        case '2': strcpy(fullExpr, "Two of "); break;
+        case '3': strcpy(fullExpr, "Three of "); break;
+        case '4': strcpy(fullExpr, "Four of "); break;
+        case '5': strcpy(fullExpr, "Five of "); break;
+        case '6': strcpy(fullExpr, "Six of "); break;
+        case '7': strcpy(fullExpr, "Seven of "); break;
+        case '8': strcpy(fullExpr, "Eight of "); break;
+        case '9': strcpy(fullExpr, "Nine of "); break;
+        case 'T': strcpy(fullExpr, "Ten of "); break;
+        case 'J': strcpy(fullExpr, "Jack of "); break;
+        case 'Q': strcpy(fullExpr, "Queen of "); break;
+        case 'K': strcpy(fullExpr, "King of "); break;
+        case 'A': strcpy(fullExpr, "Ace of "); break;
     }
     switch (abbreviation[0]) {
         case 'S': strcat(fullExpr, "Spades"); break;
