@@ -6,6 +6,7 @@ int getHandIndex(const int cardArray[]) {
             return i;
         }
     }
+    return 0;
 }
 
 int getHandLength(int currentPlayer[]) {
@@ -14,6 +15,7 @@ int getHandLength(int currentPlayer[]) {
             return i;
         }
     }
+    return 0;
 }
 
 int getNumberOfAces(int currentPlayer[], int ln) {
