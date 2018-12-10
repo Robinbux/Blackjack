@@ -1,4 +1,4 @@
-#WS2019 - SE_01 Assessment
+# WS2019 - SE_01 Assessment
 
 **Simple command line [Blackjack](https://www.bicyclecards.com/how-to-play/blackjack/) game, written in C**
 
